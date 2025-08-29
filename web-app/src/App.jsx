@@ -1,35 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+
+// Sample video data (later you'll fetch from Firebase)
+const videos = [
+  {
+    id: 1,
+    url: "https://www.w3schools.com/html/mov_bbb.mp4",
+    title: "My first auto-generated clip",
+  },
+  {
+    id: 2,
+    url: "https://www.w3schools.com/html/movie.mp4",
+    title: "Another video from Firebase",
+  },
+];
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Swipe up/down simulation with buttons (later: add real swipe/scroll)
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % videos.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) =>
+      prev === 0 ? videos.length - 1 : prev - 1
+    );
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="app">
+      <div className="video-container">
+        <video
+          key={videos[currentIndex].id}
+          src={videos[currentIndex].url}
+          controls
+          autoPlay
+          loop
+        />
+        <div className="overlay">
+          <h2>{videos[currentIndex].title}</h2>
+          <div className="buttons">
+            <button onClick={handlePrev}>⬆️ Prev</button>
+            <button onClick={handleNext}>⬇️ Next</button>
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
