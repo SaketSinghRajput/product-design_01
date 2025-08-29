@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1097235557777",
+    "firebase_url": "https://memories-maker-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "memories-maker",
+    "storage_bucket": "memories-maker.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097235557777:android:72f7f00baf46cc64c8fe30",
+        "android_client_info": {
+          "package_name": "com.example.video_capturing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1097235557777-vroni361hop29ln5vbv5c4hr3kp3c8tt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9pAAHB4rnFDk3_M55Lz_EsDEfWJzpexc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1097235557777-vroni361hop29ln5vbv5c4hr3kp3c8tt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
